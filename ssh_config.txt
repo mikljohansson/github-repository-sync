@@ -1,0 +1,11 @@
+Host *
+    # Cache and reuse connections for increase submodule clone performance
+    ControlMaster auto
+    ControlPath /tmp/ssh_mux_%h_%p_%r
+    ControlPersist 300
+    
+    # Use the SSH key from the environment
+    IdentityFile /root/.ssh/id_rsa
+
+    # Avoids ssh/git asking for confirmation on unknown remote systems
+    StrictHostKeyChecking no
