@@ -19,6 +19,7 @@ if [ "$SSH_KEY" != "" ]; then
 	echo "Using SSH key from environment"
 	echo "$SSH_KEY" > "/root/.ssh/id_rsa"
 	chmod 0600 /root/.ssh/id_rsa
+	unset SSH_KEY
 fi
 
 # Run sync script
